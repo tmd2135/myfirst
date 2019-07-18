@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%  block content %}
+    <p>article_list 입니다.</p>
+    <ul>
+    {% for article in articles %}
+        <li>
+            <a href="{% url 'core:article_detail' article.pk %}">
+             {{ article }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+    <div style="margin-top: 100px" >
+        <button><a href="{% url 'core:article_create' %}">create이동</a></button>
+    </div>
+{% endblock %}
